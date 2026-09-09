@@ -1,4 +1,3 @@
-Queries · SQL
 -- Queries  SQL
 -- Sales & Revenue Analysis - SQL Queries
 --  1 Which product category is making us the most money?
