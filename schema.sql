@@ -1,7 +1,8 @@
-DROP DATABASE IF EXISTS company_practiced;
+Database setup · SQL
+ 
 CREATE DATABASE company_practiced;
 USE company_practiced;
-
+ 
 -- ---------------- departments ----------------
 CREATE TABLE departments (
     department_id INT PRIMARY KEY,
@@ -9,7 +10,7 @@ CREATE TABLE departments (
     location VARCHAR(50),
     budget INT
 );
-
+ 
 -- ---------------- employees ----------------
 CREATE TABLE employees (
     emp_id INT PRIMARY KEY,
@@ -24,7 +25,7 @@ CREATE TABLE employees (
     manager_id INT,
     FOREIGN KEY (department_id) REFERENCES departments(department_id)
 );
-
+ 
 -- ---------------- customers ----------------
 CREATE TABLE customers (
     customer_id INT PRIMARY KEY,
@@ -34,7 +35,7 @@ CREATE TABLE customers (
     signup_date DATE,
     email VARCHAR(100)
 );
-
+ 
 -- ---------------- products ----------------
 CREATE TABLE products (
     product_id INT PRIMARY KEY,
@@ -43,7 +44,7 @@ CREATE TABLE products (
     price DECIMAL(10,2),
     stock_quantity INT
 );
-
+ 
 -- ---------------- orders ----------------
 CREATE TABLE orders (
     order_id INT PRIMARY KEY,
@@ -54,7 +55,7 @@ CREATE TABLE orders (
     FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
     FOREIGN KEY (emp_id) REFERENCES employees(emp_id)
 );
-
+ 
 -- ---------------- order_items ----------------
 CREATE TABLE order_items (
     order_item_id INT PRIMARY KEY,
@@ -65,7 +66,7 @@ CREATE TABLE order_items (
     FOREIGN KEY (order_id) REFERENCES orders(order_id),
     FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
-
+ 
 -- ---------------- Insert data: departments ----------------
 INSERT INTO departments (department_id, department_name, location, budget) VALUES
 (1, 'Sales', 'Ahmedabad', 500000),
@@ -74,7 +75,7 @@ INSERT INTO departments (department_id, department_name, location, budget) VALUE
 (4, 'Finance', 'Mumbai', 450000),
 (5, 'Marketing', 'Delhi', 400000),
 (6, 'Operations', 'Pune', 600000);
-
+ 
 -- ---------------- Insert data: employees ----------------
 INSERT INTO employees (emp_id, first_name, last_name, department_id, designation, salary, hire_date, gender, email, manager_id) VALUES
 (1, 'Ravi', 'Verma', 1, 'Marketing Executive', 50098, '2021-07-03', 'M', 'ravi.verma1@company.com', NULL),
@@ -117,7 +118,7 @@ INSERT INTO employees (emp_id, first_name, last_name, department_id, designation
 (38, 'Arjun', 'Malhotra', 4, 'Marketing Executive', 73444, '2025-03-26', 'F', 'arjun.malhotra38@company.com', 2),
 (39, 'Karan', 'Khan', 2, 'Data Analyst', 93914, '2025-01-29', 'M', 'karan.khan39@company.com', 5),
 (40, 'Priya', 'Sharma', 5, 'Project Manager', 83909, '2024-12-15', 'M', 'priya.sharma40@company.com', NULL);
-
+ 
 -- ---------------- Insert data: customers ----------------
 INSERT INTO customers (customer_id, customer_name, city, state, signup_date, email) VALUES
 (1, 'Nikhil Jain 1', 'Mumbai', 'Maharashtra', '2022-01-16', 'nikhil.jain.1@mail.com'),
@@ -181,7 +182,7 @@ INSERT INTO customers (customer_id, customer_name, city, state, signup_date, ema
 (58, 'Rekha Das 58', 'Chennai', 'Tamil Nadu', '2023-06-13', 'rekha.das.58@mail.com'),
 (59, 'Preeti Suri 59', 'Surat', 'Gujarat', '2021-08-25', 'preeti.suri.59@mail.com'),
 (60, 'Yusuf Ali 60', 'Jaipur', 'Rajasthan', '2022-01-25', 'yusuf.ali.60@mail.com');
-
+ 
 -- ---------------- Insert data: products ----------------
 INSERT INTO products (product_id, product_name, category, price, stock_quantity) VALUES
 (1, 'Laptop', 'Electronics', 14121.53, 362),
@@ -213,7 +214,7 @@ INSERT INTO products (product_id, product_name, category, price, stock_quantity)
 (27, 'Formal Shirt', 'Clothing', 9457.57, 43),
 (28, 'Jacket', 'Clothing', 15715.68, 339),
 (29, 'Kurta', 'Clothing', 34866.81, 171);
-
+ 
 -- ---------------- Insert data: orders ----------------
 INSERT INTO orders (order_id, customer_id, emp_id, order_date, status) VALUES
 (1, 6, 16, '2024-11-13', 'Delivered'),
@@ -368,7 +369,7 @@ INSERT INTO orders (order_id, customer_id, emp_id, order_date, status) VALUES
 (148, 44, 12, '2024-06-23', 'Delivered'),
 (149, 40, 25, '2024-09-03', 'Delivered'),
 (150, 38, 10, '2024-08-25', 'Delivered');
-
+ 
 -- ---------------- Insert data: order_items ----------------
 INSERT INTO order_items (order_item_id, order_id, product_id, quantity, unit_price) VALUES
 (1, 1, 15, 1, 23211.48),
@@ -747,4 +748,4 @@ INSERT INTO order_items (order_item_id, order_id, product_id, quantity, unit_pri
 (367, 150, 29, 3, 34866.81),
 (368, 150, 23, 3, 25654.6),
 (369, 150, 15, 1, 23211.48);
-
+ 
