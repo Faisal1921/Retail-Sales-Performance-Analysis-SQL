@@ -55,4 +55,4 @@ quick recap for myself:
 - bed frame = out of stock right now, fix first
 - last quarter dip = data cutoff, not a real trend, don't panic about this in the writeup
 - vinod nair = single biggest customer, worth keeping happy
-- swati = top performer, worth understanding whyhello
+- swati = top performer, worth understanding why
