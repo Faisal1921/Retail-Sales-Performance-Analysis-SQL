@@ -1,7 +1,7 @@
 # Insights - Sales & Revenue Analysis
 
-Ran all 12 queries from queries.sql against the company_practiced database. Notes below are
-based on the actual output, not guesses.
+Ran all 12 queries from queries.sql in MySQL Workbench. Notes below are based on the actual
+output, not guesses.
 
 1. Electronics brings in the most revenue (~93.5L), Furniture is second (~64L), Groceries is
 last (~49.9L). Electronics is basically carrying the business right now.
