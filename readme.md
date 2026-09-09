@@ -17,7 +17,7 @@ small retail business.
 
 ## What's in this repo
 
-- `database_setup.sql` - full setup script: creates the database, all 6 tables, and loads the
+- `Database_setup.sql` - full setup script: creates the database, all 6 tables, and loads the
   sample data (654 rows total) so the queries can be run and reproduced exactly
 - `queries.sql` - the 12 business questions, written as SQL
 - `insights.md` - plain-English findings from actually running those queries
